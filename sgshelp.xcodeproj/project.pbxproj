@@ -10,6 +10,7 @@
 		E09DDFF0156E2FCF00F89843 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = E09DDFEF156E2FCF00F89843 /* iTunesArtwork */; };
 		E09DDFF2156E3A1F00F89843 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E09DDFF1156E3A1F00F89843 /* icon.png */; };
 		E09DDFF4156E3A3200F89843 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E09DDFF3156E3A3200F89843 /* icon@2x.png */; };
+		E09DDFFA156E492E00F89843 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E09DDFF9156E492E00F89843 /* README.md */; };
 		E0BD51C5156DC93B00091542 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BD51C4156DC93B00091542 /* UIKit.framework */; };
 		E0BD51C7156DC93B00091542 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BD51C6156DC93B00091542 /* Foundation.framework */; };
 		E0BD51C9156DC93B00091542 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0BD51C8156DC93B00091542 /* CoreGraphics.framework */; };
@@ -26,6 +27,7 @@
 		E09DDFEF156E2FCF00F89843 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		E09DDFF1156E3A1F00F89843 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		E09DDFF3156E3A3200F89843 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		E09DDFF9156E492E00F89843 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E0BD51C0156DC93B00091542 /* sgshelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sgshelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BD51C4156DC93B00091542 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E0BD51C6156DC93B00091542 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,6 +62,7 @@
 		E0BD51B5156DC93B00091542 = {
 			isa = PBXGroup;
 			children = (
+				E09DDFF9156E492E00F89843 /* README.md */,
 				E09DDFF3156E3A3200F89843 /* icon@2x.png */,
 				E09DDFF1156E3A1F00F89843 /* icon.png */,
 				E0BD51CA156DC93B00091542 /* sgshelp */,
@@ -171,6 +174,7 @@
 				E09DDFF0156E2FCF00F89843 /* iTunesArtwork in Resources */,
 				E09DDFF2156E3A1F00F89843 /* icon.png in Resources */,
 				E09DDFF4156E3A3200F89843 /* icon@2x.png in Resources */,
+				E09DDFFA156E492E00F89843 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
