@@ -9,5 +9,10 @@ sgshelp
 目前程序中只加入标准版和风扩展包。其余的扩展在后续再添加优化。
 内容来自www.sanguosha.com
 
+计划：
+1.增加设置tab
+2.加入所有扩展包，通过设置进行开关
+3.分享到腾讯微博http://share.v.t.qq.com/index.php?c=share&a=index&url=&title=&pic=
+
 iwanglian@gmail.com
 http://t.qq.com/iwanglian
