@@ -139,10 +139,10 @@ typedef enum
     else if (indexPath.section==1) {
         switch (indexPath.row) {
             case 0:
-                cell.textLabel.text = @"v1.1 官方微博@sgshelp";
+                cell.textLabel.text = @"v1.1 点击反馈意见 @sgshelp";
                 break;
             case 1:
-                cell.textLabel.text = @"分享到微博";
+                cell.textLabel.text = @"去微博分享给朋友们";
                 break;
             default:
                 break;
@@ -232,7 +232,8 @@ typedef enum
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://t.qq.com/sgshelp"]];
                 break;
             case 1:
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://share.v.t.qq.com/index.php?c=share&a=index&url=&title=%E8%87%AA%E4%BB%8E%E6%9C%89%E4%BA%86%E4%B8%89%E5%9B%BD%E6%9D%80%E5%85%B5%E6%B3%95%EF%BC%8C%E8%85%B0%E4%B8%8D%E9%85%B8%EF%BC%8C%E8%85%BF%E4%B8%8D%E7%97%9B%E4%BA%86%20@sgshelp&pic="]];
+                //http://share.v.t.qq.com/index.php?c=share&a=index&url=http://itunes.apple.com/us/app/san-guo-sha-bing-fa/id530081917&title=自从用了下载安装了三国杀兵法，玩起牌来有如神助，推荐给大家 @sgshelp&pic=http://t2.qlogo.cn/mbloghead/863875589d2288c695c6/180
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://share.v.t.qq.com/index.php?c=share&a=index&url=http://itunes.apple.com/us/app/san-guo-sha-bing-fa/id530081917&title=%E8%87%AA%E4%BB%8E%E7%94%A8%E4%BA%86%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E4%BA%86%E4%B8%89%E5%9B%BD%E6%9D%80%E5%85%B5%E6%B3%95%EF%BC%8C%E7%8E%A9%E8%B5%B7%E7%89%8C%E6%9D%A5%E6%9C%89%E5%A6%82%E7%A5%9E%E5%8A%A9%EF%BC%8C%E6%8E%A8%E8%8D%90%E7%BB%99%E5%A4%A7%E5%AE%B6%20@sgshelp&pic=http://t2.qlogo.cn/mbloghead/863875589d2288c695c6/180"]];
                 break;
             default:
                 break;
