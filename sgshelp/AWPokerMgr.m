@@ -115,7 +115,7 @@
 
 +(NSDictionary*)magicDic;
 {
-    NSDictionary* magicDic = [[NSDictionary alloc] initWithObjectsAndKeys:
+    NSDictionary* baseDic = [[NSDictionary alloc] initWithObjectsAndKeys:
                               @"数量：3张\n花色：♣6 ♥6 ♠6\n出牌时机：出牌阶段。\n使用目标：除你以外，任意一名角色。\n作用效果：将【乐不思蜀】横置于目标角色判定区里，目标角色回合判定阶段，进行判定；若判定结果不为红桃，则跳过目标角色的出牌结算，将【乐不思蜀】弃置。\n★如判定结果为红桃，则没有事发生。\n★【乐不思蜀】在结算后都将被弃置。",
                               @"乐不思蜀",
                               @"数量：2张\n花色：♣Q、♣K\n出牌时机：出牌阶段。\n使用目标：除你以外，装备区里有武器牌的一名角色A。（你需要在此阶段选择另一个A使用【杀】能攻击到的角色B）。\n作用效果：A需对B使用一张【杀】，否则A必须将其装备的武器牌交给你。\n★A使用【杀】时，角色技能和武器技能可以照常发动。",
@@ -142,12 +142,26 @@
                               @"闪电",
                               
                               nil];
-    return magicDic;
+    
+    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithDictionary:baseDic];
+    
+    if ([AWSettingsMgr shareInstance].settings.fightOn) {
+        NSDictionary* fightDic = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                  @"数量：2张\n花色：♠ 10 \n♣ 4\n\n定义：出牌阶段，对除你以外，与你距离为1以内的角色使用（横置于该角色的判定区内）若其判定的结果不为梅花，则跳过该角色的摸牌阶段。\n",
+                                  @"兵粮寸断",
+                                  @"数量：3张 \n花色：♦ Q \n♥ 2、♥ 3\n\n出牌时机：出牌阶段。\n使用目标：任意有手牌的角色。\n作用效果：目标角色展示1张手牌，若你弃置1张与之相同花色的手牌，则你对目标角色造成1点火焰伤害。",
+                                  @"火攻",
+                                  @"数量：6张 \n花色：♠ J、♠ Q \n♣ 10、♣ J、♣ Q、♣ K\n\n出牌时机：出牌阶段。\n使用目标：1、连环——任何目标\n2、重铸——自己\n作用效果：连环，出牌阶段使用，选择1至2个角色，分别横置或重置这些角色。处于“连环状态”。\n重铸，出牌阶段，你可以从手里弃掉这张牌，然后摸1张牌。 \n",
+                                  @"铁索连环",
+                                       nil];
+        [dic addEntriesFromDictionary:fightDic];
+    }
+    return dic;
 }
 
 +(NSDictionary*)weaponDic;
 {
-    NSDictionary* weaponDic = [[NSDictionary alloc] initWithObjectsAndKeys:
+    NSDictionary* baseDic = [[NSDictionary alloc] initWithObjectsAndKeys:
                                @"数量：1张\n花色：♠ 6\n装\n★对方的防具没有任何效果。",
                                @"青釭剑",
                                @"数量：2张\n花色：♦A ♣A\n装备类型：武器\n攻击范围：1\n武器特效：出牌阶段，你可以使用任意张【杀】。",
@@ -173,7 +187,22 @@
                                @"【+1马】：其他角色计算与你的距离时，始终+1（你可以理解为一种防御上的优势），不同名称的+1马，其效果是相同的。 \n数量：3张\n花色：♥ K\n♣ 5\n♠ 5 \n【-1马】：你计算与其他角色的距离时，始终-1（你可以理解为一种进攻上的优势）,不同名称的-1马，其效果是相同的。\n数量：3张\n花色：♥ 5\n♦ K\n♠ K",
                                @"马",
                                nil];
-    return weaponDic;
+    NSMutableDictionary* dic = [[NSMutableDictionary alloc] initWithDictionary:baseDic];
+    
+    if ([AWSettingsMgr shareInstance].settings.fightOn) {
+        NSDictionary* fightDic = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                  @"数量：1张\n花色：♣ A \n\n装备类型：防具\n装备效果：锁定技，每次你受到伤害时，最多承受1点伤害（防止多余的伤害）；当你失去装备区里的白银狮子时，你回复1点体力值。\n",
+                                  @"白银狮子",
+                                  @"数量：1张\n花色：♠ A \n\n武器类型：武器\n攻击范围：2 \n装备效果：锁定技，当你使用的【杀】造成伤害时，若指定目标没有手牌，则该伤害+1。\n",
+                                  @"古锭刀",
+                                  @"数量：2张\n花色：♠ 2\n♣ 2\n\n装备类型：防具\n装备效果：锁定技，南蛮入侵、万箭齐发和普通杀对你无效。每次受到火焰伤害时，该伤害+1。\n",
+                                  @"藤甲",
+                                  @"数量：1张\n花色：♦ A \n\n装备类型：武器\n攻击范围：4 \n装备效果：你可以将你的任一普通杀当作具火焰伤害的杀来使用。\n",
+                                  @"朱雀羽扇",
+                                       nil];
+        [dic addEntriesFromDictionary:fightDic];
+    }
+    return dic;
 }
 
 

@@ -174,6 +174,7 @@ typedef enum
             break;
         case EVCTagFightSwitch:
             [AWSettingsMgr shareInstance].settings.fightOn = sw.on;
+            [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"notify_dic_changed_%d",EPokerTypeMagic] object:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"notify_dic_changed_%d",EPokerTypeWeapon] object:nil];
             break;
         default:
