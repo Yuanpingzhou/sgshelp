@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AWPokerMgr.h"
 
 @interface AWBasicTVC : UITableViewController
 {
+    TPokerType _type;
     NSDictionary* _heroDic;
     NSArray* _sortKeyArray;
 }
-- (id)initWithDic:(NSDictionary*)dic;
-
+- (id)initWithType:(TPokerType)type;
+-(void)reset;
 @end

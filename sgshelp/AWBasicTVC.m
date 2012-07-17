@@ -7,6 +7,7 @@
 //
 
 #import "AWBasicTVC.h"
+#import "AWPokerMgr.h"
 
 NSComparisonResult compare(id a,id b,void *context){
     return [a localizedCaseInsensitiveCompare:b];
@@ -18,17 +19,31 @@ NSComparisonResult compare(id a,id b,void *context){
 
 @implementation AWBasicTVC
 
-- (id)initWithDic:(NSDictionary*)dic
+- (id)initWithType:(TPokerType)type;
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
         // Custom initialization
-        _heroDic = dic;
+        _type = type;
+        _heroDic = [AWPokerMgr getPokerDic:type];
         _sortKeyArray = [[_heroDic allKeys] sortedArrayUsingFunction:compare context:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dicChanged:) name:[NSString stringWithFormat:@"notify_dic_changed_%d",_type] object:nil];
     }
     return self;
 }
 
+-(void)dicChanged:(NSNotification *)notification
+{
+    [self reset];
+}
+
+-(void)reset;
+{
+    _heroDic = [AWPokerMgr getPokerDic:_type];
+    _sortKeyArray = [[_heroDic allKeys] sortedArrayUsingFunction:compare context:nil];
+    [self.tableView reloadData];
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0759EC915B50E60001EDB18 /* More@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0759EC815B50E60001EDB18 /* More@2x.png */; };
+		E0759ECD15B50E84001EDB18 /* AWMoreTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E0759ECC15B50E84001EDB18 /* AWMoreTVC.m */; };
+		E0759ED415B52432001EDB18 /* AWSettingsMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = E0759ED315B52432001EDB18 /* AWSettingsMgr.m */; };
+		E0759ED715B5337B001EDB18 /* AWPokerMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = E0759ED615B5337B001EDB18 /* AWPokerMgr.m */; };
 		E09DDFF0156E2FCF00F89843 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = E09DDFEF156E2FCF00F89843 /* iTunesArtwork */; };
 		E09DDFF2156E3A1F00F89843 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E09DDFF1156E3A1F00F89843 /* icon.png */; };
 		E09DDFF4156E3A3200F89843 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E09DDFF3156E3A3200F89843 /* icon@2x.png */; };
@@ -24,6 +28,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E0759EC815B50E60001EDB18 /* More@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "More@2x.png"; sourceTree = "<group>"; };
+		E0759ECB15B50E84001EDB18 /* AWMoreTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWMoreTVC.h; sourceTree = "<group>"; };
+		E0759ECC15B50E84001EDB18 /* AWMoreTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWMoreTVC.m; sourceTree = "<group>"; };
+		E0759ED215B52431001EDB18 /* AWSettingsMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWSettingsMgr.h; sourceTree = "<group>"; };
+		E0759ED315B52432001EDB18 /* AWSettingsMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWSettingsMgr.m; sourceTree = "<group>"; };
+		E0759ED515B5337B001EDB18 /* AWPokerMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWPokerMgr.h; sourceTree = "<group>"; };
+		E0759ED615B5337B001EDB18 /* AWPokerMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWPokerMgr.m; sourceTree = "<group>"; };
 		E09DDFEF156E2FCF00F89843 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		E09DDFF1156E3A1F00F89843 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		E09DDFF3156E3A3200F89843 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
@@ -97,6 +108,12 @@
 				E0BD51CB156DC93B00091542 /* Supporting Files */,
 				E0BD51EF156DCAFF00091542 /* AWBasicTVC.h */,
 				E0BD51F0156DCAFF00091542 /* AWBasicTVC.m */,
+				E0759ECB15B50E84001EDB18 /* AWMoreTVC.h */,
+				E0759ECC15B50E84001EDB18 /* AWMoreTVC.m */,
+				E0759ED215B52431001EDB18 /* AWSettingsMgr.h */,
+				E0759ED315B52432001EDB18 /* AWSettingsMgr.m */,
+				E0759ED515B5337B001EDB18 /* AWPokerMgr.h */,
+				E0759ED615B5337B001EDB18 /* AWPokerMgr.m */,
 			);
 			path = sgshelp;
 			sourceTree = "<group>";
@@ -104,6 +121,7 @@
 		E0BD51CB156DC93B00091542 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E0759EC815B50E60001EDB18 /* More@2x.png */,
 				E09DDFEF156E2FCF00F89843 /* iTunesArtwork */,
 				E0BD51CC156DC93B00091542 /* sgshelp-Info.plist */,
 				E0CCAA47156E1F9000132BE5 /* Bookmark@2x.png */,
@@ -175,6 +193,7 @@
 				E09DDFF2156E3A1F00F89843 /* icon.png in Resources */,
 				E09DDFF4156E3A3200F89843 /* icon@2x.png in Resources */,
 				E09DDFFA156E492E00F89843 /* README.md in Resources */,
+				E0759EC915B50E60001EDB18 /* More@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +207,9 @@
 				E0BD51D1156DC93B00091542 /* main.m in Sources */,
 				E0BD51D5156DC93C00091542 /* AWAppDelegate.m in Sources */,
 				E0BD51F1156DCB0000091542 /* AWBasicTVC.m in Sources */,
+				E0759ECD15B50E84001EDB18 /* AWMoreTVC.m in Sources */,
+				E0759ED415B52432001EDB18 /* AWSettingsMgr.m in Sources */,
+				E0759ED715B5337B001EDB18 /* AWPokerMgr.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
