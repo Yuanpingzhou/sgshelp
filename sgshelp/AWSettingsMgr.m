@@ -13,6 +13,11 @@
 @synthesize fireOn;
 @synthesize mountainOn;
 @synthesize fightOn;
+@synthesize godOn;
+@synthesize spOn;
+@synthesize sspOn;
+@synthesize generalOn;
+@synthesize general2012On;
 
 
 -(id)initWithCoder:(NSCoder*)decoder
@@ -25,6 +30,11 @@
         self.fireOn = [(NSNumber*)[decoder decodeObjectForKey:@"fireOn"] boolValue];
         self.mountainOn = [(NSNumber*)[decoder decodeObjectForKey:@"mountainOn"] boolValue];
         self.fightOn = [(NSNumber*)[decoder decodeObjectForKey:@"fightOn"] boolValue];
+        self.godOn = [(NSNumber*)[decoder decodeObjectForKey:@"godOn"] boolValue];
+        self.spOn = [(NSNumber*)[decoder decodeObjectForKey:@"spOn"] boolValue];
+        self.sspOn = [(NSNumber*)[decoder decodeObjectForKey:@"sspOn"] boolValue];
+        self.generalOn = [(NSNumber*)[decoder decodeObjectForKey:@"generalOn"] boolValue];
+        self.general2012On = [(NSNumber*)[decoder decodeObjectForKey:@"general2012On"] boolValue];
     }
     
     return self;
@@ -37,6 +47,11 @@
     [encoder encodeObject:[NSNumber numberWithBool:self.fireOn] forKey:@"fireOn"];
     [encoder encodeObject:[NSNumber numberWithBool:self.mountainOn] forKey:@"mountainOn"];
     [encoder encodeObject:[NSNumber numberWithBool:self.fightOn] forKey:@"fightOn"];
+    [encoder encodeObject:[NSNumber numberWithBool:self.godOn] forKey:@"godOn"];
+    [encoder encodeObject:[NSNumber numberWithBool:self.spOn] forKey:@"spOn"];
+    [encoder encodeObject:[NSNumber numberWithBool:self.sspOn] forKey:@"sspOn"];
+    [encoder encodeObject:[NSNumber numberWithBool:self.generalOn] forKey:@"generalOn"];
+    [encoder encodeObject:[NSNumber numberWithBool:self.general2012On] forKey:@"general2012On"];
 }
 
 @end

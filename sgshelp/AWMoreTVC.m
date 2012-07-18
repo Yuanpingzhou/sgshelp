@@ -21,6 +21,11 @@ typedef enum
     EVCTagForestSwitch,
     EVCTagMontainSwitch,
     EVCTagFightSwitch,
+    EVCTagGodSwitch,
+    EVCTagSpSwitch,
+    EVCTagSspSwitch,
+    EVCTagGeneralSwitch,
+    EVCTagGeneral2012Switch,
     
 }TVCTag;
 
@@ -63,7 +68,7 @@ typedef enum
 {
     switch (section) {
         case 0:
-            return @"启用";
+            return @"启用扩展";
         case 1:   
             return @"关于";
         default:
@@ -83,7 +88,7 @@ typedef enum
     // Return the number of rows in the section.
     switch (section) {
         case 0:
-            return 5;
+            return 10;
         case 1:  
             return 2;
         default:
@@ -128,6 +133,31 @@ typedef enum
                 cell.textLabel.text = @"军争篇";
                 sw.on = [AWSettingsMgr shareInstance].settings.fightOn;
                 sw.tag = EVCTagFightSwitch;
+                break;
+            case 5:
+                cell.textLabel.text = @"神";
+                sw.on = [AWSettingsMgr shareInstance].settings.godOn;
+                sw.tag = EVCTagGodSwitch;
+                break;
+            case 6:
+                cell.textLabel.text = @"SP武将";
+                sw.on = [AWSettingsMgr shareInstance].settings.spOn;
+                sw.tag = EVCTagSpSwitch;
+                break;
+            case 7:
+                cell.textLabel.text = @"☆SP武将";
+                sw.on = [AWSettingsMgr shareInstance].settings.sspOn;
+                sw.tag = EVCTagSspSwitch;
+                break;
+            case 8:
+                cell.textLabel.text = @"一将成名";
+                sw.on = [AWSettingsMgr shareInstance].settings.generalOn;
+                sw.tag = EVCTagGeneralSwitch;
+                break;
+            case 9:
+                cell.textLabel.text = @"2012一将成名";
+                sw.on = [AWSettingsMgr shareInstance].settings.general2012On;
+                sw.tag = EVCTagGeneral2012Switch;
                 break;
                 
             default:
@@ -176,6 +206,26 @@ typedef enum
             [AWSettingsMgr shareInstance].settings.fightOn = sw.on;
             [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"notify_dic_changed_%d",EPokerTypeMagic] object:nil];
             [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"notify_dic_changed_%d",EPokerTypeWeapon] object:nil];
+            break;
+        case EVCTagGodSwitch:
+            [AWSettingsMgr shareInstance].settings.godOn = sw.on;
+            [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"notify_dic_changed_%d",EPokerTypeHero] object:nil];
+            break;
+        case EVCTagSpSwitch:
+            [AWSettingsMgr shareInstance].settings.spOn = sw.on;
+            [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"notify_dic_changed_%d",EPokerTypeHero] object:nil];
+            break;
+        case EVCTagSspSwitch:
+            [AWSettingsMgr shareInstance].settings.sspOn = sw.on;
+            [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"notify_dic_changed_%d",EPokerTypeHero] object:nil];
+            break;
+        case EVCTagGeneralSwitch:
+            [AWSettingsMgr shareInstance].settings.generalOn = sw.on;
+            [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"notify_dic_changed_%d",EPokerTypeHero] object:nil];
+            break;
+        case EVCTagGeneral2012Switch:
+            [AWSettingsMgr shareInstance].settings.general2012On = sw.on;
+            [[NSNotificationCenter defaultCenter] postNotificationName:[NSString stringWithFormat:@"notify_dic_changed_%d",EPokerTypeHero] object:nil];
             break;
         default:
             break;

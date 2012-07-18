@@ -13,7 +13,12 @@
 @property (nonatomic, assign) BOOL forestOn;
 @property (nonatomic, assign) BOOL fireOn;
 @property (nonatomic, assign) BOOL mountainOn;
-@property (nonatomic, assign) BOOL fightOn;
+@property (nonatomic, assign) BOOL fightOn;//军争篇
+@property (nonatomic, assign) BOOL godOn; //神
+@property (nonatomic, assign) BOOL spOn; //sp
+@property (nonatomic, assign) BOOL sspOn; //☆SP
+@property (nonatomic, assign) BOOL generalOn; //神
+@property (nonatomic, assign) BOOL general2012On; //神
 
 @end
 
