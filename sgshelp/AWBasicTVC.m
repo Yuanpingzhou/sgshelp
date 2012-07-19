@@ -207,13 +207,15 @@ NSComparisonResult compare(id a,id b,void *context){
     [_sortKeySearchArray removeAllObjects];
     [_heroSearchDic removeAllObjects];
     for (NSString* key in _sortKeyArray) {
-        if ([key rangeOfString:searchString].location!=NSNotFound) {
+        NSArray* keyComp = [key componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        NSString* keyCombine =[keyComp componentsJoinedByString:@""];
+        if ([keyCombine rangeOfString:searchString].location!=NSNotFound) {
             [_sortKeySearchArray addObject:key];
             [_heroSearchDic setObject:[_heroDic objectForKey:key] forKey:key];
         }
     }
     for (NSString* key in _sortKeyArray) {
-        if ([key rangeOfString:searchString].location==NSNotFound) {
+        if ([_heroSearchDic objectForKey:key]==nil) {
             NSString* value = (NSString*)[_heroDic objectForKey:key];
             if ([value rangeOfString:searchString].location!=NSNotFound) {
                 [_sortKeySearchArray addObject:key];
