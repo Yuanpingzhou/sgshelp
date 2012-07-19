@@ -28,6 +28,9 @@ NSComparisonResult compare(id a,id b,void *context){
         _heroDic = [AWPokerMgr getPokerDic:type];
         _sortKeyArray = [[_heroDic allKeys] sortedArrayUsingFunction:compare context:nil];
         
+        _heroSearchDic = [[NSMutableDictionary alloc] init];
+        _sortKeySearchArray = [[NSMutableArray alloc] init];
+        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dicChanged:) name:[NSString stringWithFormat:@"notify_dic_changed_%d",_type] object:nil];
     }
     return self;
@@ -53,6 +56,15 @@ NSComparisonResult compare(id a,id b,void *context){
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UISearchBar *searchBar = [[UISearchBar alloc] init] ;
+    _searchCtr =[[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+    _searchCtr.searchResultsDelegate = self;
+    _searchCtr.searchResultsDataSource = self;
+    _searchCtr.delegate = self;
+    searchBar.frame = CGRectMake(0, 0, 0, 38);
+    searchBar.placeholder = @"搜索";
+    self.tableView.tableHeaderView = searchBar;
+    self.tableView.contentOffset = CGPointMake(0, 38);
 }
 
 - (void)viewDidUnload
@@ -72,7 +84,11 @@ NSComparisonResult compare(id a,id b,void *context){
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return [_sortKeyArray count];
+    if (tableView == _searchCtr.searchResultsTableView) {
+        return [_sortKeySearchArray count];
+    }else {
+        return [_sortKeyArray count];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -90,8 +106,11 @@ NSComparisonResult compare(id a,id b,void *context){
     if (cell==nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    NSString* text = [_heroDic objectForKey:[_sortKeyArray objectAtIndex:indexPath.section]];
-    cell.textLabel.text = text;
+    if (tableView == _searchCtr.searchResultsTableView) {
+        cell.textLabel.text = [_heroSearchDic objectForKey:[_sortKeySearchArray objectAtIndex:indexPath.section]];
+    }else {
+        cell.textLabel.text = [_heroDic objectForKey:[_sortKeyArray objectAtIndex:indexPath.section]];
+    }
     cell.textLabel.font = [UIFont systemFontOfSize:14];
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
@@ -99,7 +118,12 @@ NSComparisonResult compare(id a,id b,void *context){
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString* cellText = [_heroDic objectForKey:[_sortKeyArray objectAtIndex:indexPath.section]];
+    NSString* cellText;
+    if (tableView == _searchCtr.searchResultsTableView) {
+        cellText = [_heroSearchDic objectForKey:[_sortKeySearchArray objectAtIndex:indexPath.section]];
+    }else {
+        cellText = [_heroDic objectForKey:[_sortKeyArray objectAtIndex:indexPath.section]];
+    }
     UIFont *cellFont = [UIFont systemFontOfSize:14];
     CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
     CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
@@ -108,7 +132,11 @@ NSComparisonResult compare(id a,id b,void *context){
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [_sortKeyArray objectAtIndex:section];
+    if (tableView == _searchCtr.searchResultsTableView) {
+        return [_sortKeySearchArray objectAtIndex:section];
+    }else {
+        return [_sortKeyArray objectAtIndex:section];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index{
@@ -116,7 +144,11 @@ NSComparisonResult compare(id a,id b,void *context){
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
-    return _sortKeyArray;
+    if (tableView == _searchCtr.searchResultsTableView) {
+        return _sortKeySearchArray;
+    }else {
+        return _sortKeyArray;
+    }
 }
 
 /*
@@ -170,6 +202,25 @@ NSComparisonResult compare(id a,id b,void *context){
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
-
-
+#pragma mark - UISearchDisplayDelegate
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString{
+    [_sortKeySearchArray removeAllObjects];
+    [_heroSearchDic removeAllObjects];
+    for (NSString* key in _sortKeyArray) {
+        if ([key rangeOfString:searchString].location!=NSNotFound) {
+            [_sortKeySearchArray addObject:key];
+            [_heroSearchDic setObject:[_heroDic objectForKey:key] forKey:key];
+        }
+    }
+    for (NSString* key in _sortKeyArray) {
+        if ([key rangeOfString:searchString].location==NSNotFound) {
+            NSString* value = (NSString*)[_heroDic objectForKey:key];
+            if ([value rangeOfString:searchString].location!=NSNotFound) {
+                [_sortKeySearchArray addObject:key];
+                [_heroSearchDic setObject:[_heroDic objectForKey:key] forKey:key];
+            }
+        }
+    }
+    return YES;
+}
 @end

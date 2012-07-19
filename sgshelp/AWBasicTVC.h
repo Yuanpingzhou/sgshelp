@@ -9,11 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "AWPokerMgr.h"
 
-@interface AWBasicTVC : UITableViewController
+@interface AWBasicTVC : UITableViewController<UISearchDisplayDelegate, UISearchBarDelegate>
 {
     TPokerType _type;
     NSDictionary* _heroDic;
     NSArray* _sortKeyArray;
+    
+    UISearchDisplayController* _searchCtr;
+    NSMutableDictionary* _heroSearchDic;
+    NSMutableArray* _sortKeySearchArray;
+    
 }
 - (id)initWithType:(TPokerType)type;
 -(void)reset;
