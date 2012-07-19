@@ -90,7 +90,7 @@ typedef enum
         case 0:
             return 10;
         case 1:  
-            return 2;
+            return 3;
         default:
             break;
     }
@@ -169,10 +169,13 @@ typedef enum
     else if (indexPath.section==1) {
         switch (indexPath.row) {
             case 0:
-                cell.textLabel.text = @"v1.1 点击反馈意见 @sgshelp";
+                cell.textLabel.text = @"v1.1 点击反馈意见 收听@sgshelp";
                 break;
             case 1:
                 cell.textLabel.text = @"去微博分享给朋友们";
+                break;
+            case 2:
+                cell.textLabel.text = @"内容来源: www.sanguosha.com";
                 break;
             default:
                 break;
@@ -282,8 +285,11 @@ typedef enum
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://t.qq.com/sgshelp"]];
                 break;
             case 1:
-                //http://share.v.t.qq.com/index.php?c=share&a=index&url=http://itunes.apple.com/us/app/san-guo-sha-bing-fa/id530081917&title=自从用了下载安装了三国杀兵法，玩起牌来有如神助，推荐给大家 @sgshelp&pic=http://t2.qlogo.cn/mbloghead/863875589d2288c695c6/180
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://share.v.t.qq.com/index.php?c=share&a=index&url=http://itunes.apple.com/us/app/san-guo-sha-bing-fa/id530081917&title=%E8%87%AA%E4%BB%8E%E7%94%A8%E4%BA%86%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E4%BA%86%E4%B8%89%E5%9B%BD%E6%9D%80%E5%85%B5%E6%B3%95%EF%BC%8C%E7%8E%A9%E8%B5%B7%E7%89%8C%E6%9D%A5%E6%9C%89%E5%A6%82%E7%A5%9E%E5%8A%A9%EF%BC%8C%E6%8E%A8%E8%8D%90%E7%BB%99%E5%A4%A7%E5%AE%B6%20@sgshelp&pic=http://t2.qlogo.cn/mbloghead/863875589d2288c695c6/180"]];
+                //http://share.v.t.qq.com/index.php?c=share&a=index&url=http://itunes.apple.com/us/app/san-guo-sha-bing-fa/id530081917&title=点兵点将，他们都是我的好兵好将。@sgshelp，有最详尽的武将介绍、锦囊说明、武器功能，选将出牌了如指掌，用了都说好。快到AppStore下载&pic=http://t2.qlogo.cn/mbloghead/863875589d2288c695c6/180
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://share.v.t.qq.com/index.php?c=share&a=index&url=http://itunes.apple.com/us/app/san-guo-sha-bing-fa/id530081917&title=%E7%82%B9%E5%85%B5%E7%82%B9%E5%B0%86%EF%BC%8C%E4%BB%96%E4%BB%AC%E9%83%BD%E6%98%AF%E6%88%91%E7%9A%84%E5%A5%BD%E5%85%B5%E5%A5%BD%E5%B0%86%E3%80%82@sgshelp%EF%BC%8C%E6%9C%89%E6%9C%80%E8%AF%A6%E5%B0%BD%E7%9A%84%E6%AD%A6%E5%B0%86%E4%BB%8B%E7%BB%8D%E3%80%81%E9%94%A6%E5%9B%8A%E8%AF%B4%E6%98%8E%E3%80%81%E6%AD%A6%E5%99%A8%E5%8A%9F%E8%83%BD%EF%BC%8C%E9%80%89%E5%B0%86%E5%87%BA%E7%89%8C%E4%BA%86%E5%A6%82%E6%8C%87%E6%8E%8C%EF%BC%8C%E7%94%A8%E4%BA%86%E9%83%BD%E8%AF%B4%E5%A5%BD%E3%80%82%E5%BF%AB%E5%88%B0AppStore%E4%B8%8B%E8%BD%BD&pic=http://t2.qlogo.cn/mbloghead/863875589d2288c695c6/180"]];
+                break;
+            case 2:
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.sanguosha.com?from=@sgshelp"]];
                 break;
             default:
                 break;
