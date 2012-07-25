@@ -200,7 +200,7 @@ NSComparisonResult compare(id a,id b,void *context){
     }else {
         key =  [_sortKeyArray objectAtIndex:indexPath.section];
     }
-    NSString* value = [[AWPokerMgr getDetailDic] objectForKey:key];
+    NSString* value = [[AWPokerMgr getDetailDic:_type] objectForKey:key];
     if (value!=nil) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:key 
                                                         message:value 
