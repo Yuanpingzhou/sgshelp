@@ -17,5 +17,6 @@ typedef enum
 
 @interface AWPokerMgr : NSObject
 +(NSDictionary*)getPokerDic:(TPokerType)type;
++(NSDictionary*)getDetailDic;
 
 @end
