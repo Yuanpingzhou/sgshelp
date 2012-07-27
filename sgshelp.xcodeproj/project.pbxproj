@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E067C0DA15C22FAB00FFD463 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = E067C0D815C22FAB00FFD463 /* icon-72.png */; };
+		E067C0DB15C22FAB00FFD463 /* icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = E067C0D915C22FAB00FFD463 /* icon-144.png */; };
 		E0759EC915B50E60001EDB18 /* More@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0759EC815B50E60001EDB18 /* More@2x.png */; };
 		E0759ECD15B50E84001EDB18 /* AWMoreTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E0759ECC15B50E84001EDB18 /* AWMoreTVC.m */; };
 		E0759ED415B52432001EDB18 /* AWSettingsMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = E0759ED315B52432001EDB18 /* AWSettingsMgr.m */; };
@@ -28,6 +30,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E067C0D815C22FAB00FFD463 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72.png"; sourceTree = "<group>"; };
+		E067C0D915C22FAB00FFD463 /* icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-144.png"; sourceTree = "<group>"; };
 		E0759EC815B50E60001EDB18 /* More@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "More@2x.png"; sourceTree = "<group>"; };
 		E0759ECB15B50E84001EDB18 /* AWMoreTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWMoreTVC.h; sourceTree = "<group>"; };
 		E0759ECC15B50E84001EDB18 /* AWMoreTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWMoreTVC.m; sourceTree = "<group>"; };
@@ -36,8 +40,8 @@
 		E0759ED515B5337B001EDB18 /* AWPokerMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWPokerMgr.h; sourceTree = "<group>"; };
 		E0759ED615B5337B001EDB18 /* AWPokerMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWPokerMgr.m; sourceTree = "<group>"; };
 		E09DDFEF156E2FCF00F89843 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
-		E09DDFF1156E3A1F00F89843 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		E09DDFF3156E3A3200F89843 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		E09DDFF1156E3A1F00F89843 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../icon.png; sourceTree = "<group>"; };
+		E09DDFF3156E3A3200F89843 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "../icon@2x.png"; sourceTree = "<group>"; };
 		E09DDFF9156E492E00F89843 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		E0BD51C0156DC93B00091542 /* sgshelp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sgshelp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BD51C4156DC93B00091542 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -74,8 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				E09DDFF9156E492E00F89843 /* README.md */,
-				E09DDFF3156E3A3200F89843 /* icon@2x.png */,
-				E09DDFF1156E3A1F00F89843 /* icon.png */,
 				E0BD51CA156DC93B00091542 /* sgshelp */,
 				E0BD51C3156DC93B00091542 /* Frameworks */,
 				E0BD51C1156DC93B00091542 /* Products */,
@@ -121,6 +123,10 @@
 		E0BD51CB156DC93B00091542 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E067C0D815C22FAB00FFD463 /* icon-72.png */,
+				E067C0D915C22FAB00FFD463 /* icon-144.png */,
+				E09DDFF3156E3A3200F89843 /* icon@2x.png */,
+				E09DDFF1156E3A1F00F89843 /* icon.png */,
 				E0759EC815B50E60001EDB18 /* More@2x.png */,
 				E09DDFEF156E2FCF00F89843 /* iTunesArtwork */,
 				E0BD51CC156DC93B00091542 /* sgshelp-Info.plist */,
@@ -194,6 +200,8 @@
 				E09DDFF4156E3A3200F89843 /* icon@2x.png in Resources */,
 				E09DDFFA156E492E00F89843 /* README.md in Resources */,
 				E0759EC915B50E60001EDB18 /* More@2x.png in Resources */,
+				E067C0DA15C22FAB00FFD463 /* icon-72.png in Resources */,
+				E067C0DB15C22FAB00FFD463 /* icon-144.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
